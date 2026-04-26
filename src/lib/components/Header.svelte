@@ -14,9 +14,15 @@
 	<div class="nav-inner">
 		<span class="nav-spacer" aria-hidden="true"></span>
 
-		<a class="logo" href="/" onclick={closeMenu}>
-			<span class="logo-mark">Suruleche</span>
-			<span class="logo-sub">Alfajorería</span>
+		<a class="logo" href="/" onclick={closeMenu} aria-label="Suruleche — inicio">
+			<img
+				class="logo-img"
+				src="/SVG/logo.svg"
+				alt="Suruleche Alfajorería"
+				width="267"
+				height="75"
+				decoding="async"
+			/>
 		</a>
 
 		<button
@@ -79,9 +85,8 @@
 
 	.logo {
 		display: flex;
-		flex-direction: column;
 		align-items: center;
-		gap: 0.125rem;
+		justify-content: center;
 		text-decoration: none;
 		transition: opacity var(--transition-fast);
 	}
@@ -90,23 +95,12 @@
 		opacity: 0.85;
 	}
 
-	.logo-mark {
-		font-family: var(--font-display);
-		font-weight: 700;
-		font-size: 1.5rem;
-		line-height: 1;
-		color: var(--color-off-white);
-		letter-spacing: 0.02em;
-	}
-
-	.logo-sub {
-		font-family: var(--font-body);
-		font-size: 0.5625rem;
-		font-weight: var(--fw-bold);
-		letter-spacing: 0.32em;
-		text-transform: uppercase;
-		color: var(--color-cream);
-		padding-left: 0.32em;
+	.logo-img {
+		display: block;
+		height: 2rem;
+		width: auto;
+		max-width: min(58vw, 11.5rem);
+		object-fit: contain;
 	}
 
 	/* Hamburger */
@@ -185,12 +179,9 @@
 	}
 
 	@media (max-width: 480px) {
-		.logo-mark {
-			font-size: 1.25rem;
-		}
-		.logo-sub {
-			font-size: 0.5rem;
-			letter-spacing: 0.28em;
+		.logo-img {
+			height: 1.65rem;
+			max-width: min(62vw, 10rem);
 		}
 	}
 </style>
